@@ -1,4 +1,4 @@
-<template >
+<template>
     <div class="slide-view">
         <SlideList
             :slides="slides"
@@ -7,17 +7,17 @@
         />
         <SlidePreview :slide="slides[activeIndex]" />
         <SlideConfig />
-    </div >
-</template >
+    </div>
+</template>
 
 <script
     setup
     lang="ts"
 >
-import {ref} from "vue";
-import SlideList from "@/components/SlideList.vue";
-import SlidePreview from "@/components/SlidePreview.vue";
-import SlideConfig from "@/components/SlideConfig.vue";
+import { ref } from "vue";
+import SlideList from "@/components/slideList/SlideList.vue";
+import SlidePreview from "@/components/slidePreview/SlidePreview.vue";
+import SlideConfig from "@/components/slideConfig/SlideConfig.vue";
 
 interface Slide {
     id: number;
@@ -44,7 +44,7 @@ const slides = ref<Slide[]>([
         subtext: "Work together with your team, anywhere in the world.",
     },
 ]);
-</script >
+</script>
 
 <style
     scoped
@@ -57,4 +57,4 @@ const slides = ref<Slide[]>([
     overflow: hidden;
     background: #F6F6F6;
 }
-</style >
+</style>
