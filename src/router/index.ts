@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from "vue-router"
-import SlideView from "@/views/SlideView.vue"
+import { createRouter, createWebHistory } from "vue-router";
+import SlideView from "@/views/SlideView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -9,6 +9,6 @@ const router = createRouter({
             component: SlideView,
         },
     ],
-})
+});
 
-export default router
+export default router;

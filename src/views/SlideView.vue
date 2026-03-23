@@ -14,18 +14,18 @@
     setup
     lang="ts"
 >
-import {ref} from "vue"
-import SlideList from "@/components/SlideList.vue"
-import SlidePreview from "@/components/SlidePreview.vue"
-import SlideConfig from "@/components/SlideConfig.vue"
+import {ref} from "vue";
+import SlideList from "@/components/SlideList.vue";
+import SlidePreview from "@/components/SlidePreview.vue";
+import SlideConfig from "@/components/SlideConfig.vue";
 
 interface Slide {
-    id: number
-    title: string
-    subtext: string
+    id: number;
+    title: string;
+    subtext: string;
 }
 
-const activeIndex = ref<number>(0)
+const activeIndex = ref<number>(0);
 
 const slides = ref<Slide[]>([
     {
@@ -43,7 +43,7 @@ const slides = ref<Slide[]>([
         title: "Collaborate in Real Time",
         subtext: "Work together with your team, anywhere in the world.",
     },
-])
+]);
 </script >
 
 <style

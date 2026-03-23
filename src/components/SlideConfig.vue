@@ -4,10 +4,16 @@
     </aside>
 </template>
 
-<script setup lang="ts">
+<script
+    setup
+    lang="ts"
+>
 </script>
 
-<style scoped lang="scss">
+<style
+    scoped
+    lang="scss"
+>
 .slide-config {
     width: 260px;
     min-width: 260px;

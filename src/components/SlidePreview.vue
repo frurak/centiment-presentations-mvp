@@ -1,6 +1,9 @@
 <template>
     <div class="slide-preview">
-        <div class="reveal" ref="deckEl">
+        <div
+            class="reveal"
+            ref="deckEl"
+        >
             <div class="slides">
                 <section>
                     <h1>{{ slide.title }}</h1>
@@ -11,24 +14,27 @@
     </div>
 </template>
 
-<script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, watch } from "vue"
-import Reveal from "reveal.js"
-import "reveal.js/reveal.css"
-import "reveal.js/theme/black.css"
+<script
+    setup
+    lang="ts"
+>
+import {ref, onMounted, onBeforeUnmount, watch} from "vue";
+import Reveal from "reveal.js";
+import "reveal.js/reveal.css";
+import "reveal.js/theme/black.css";
 
 interface Slide {
-    id: number
-    title: string
-    subtext: string
+    id: number;
+    title: string;
+    subtext: string;
 }
 
 const props = defineProps<{
     slide: Slide
-}>()
+}>();
 
-const deckEl = ref<HTMLElement | null>(null)
-let deck: Reveal.Api | null = null
+const deckEl = ref<HTMLElement | null>(null);
+let deck: Reveal.Api | null = null;
 
 onMounted(() => {
     deck = new Reveal(deckEl.value!, {
@@ -39,23 +45,26 @@ onMounted(() => {
         touch: false,
         center: true,
         transition: "none",
-    })
-    deck.initialize()
-})
+    });
+    deck.initialize();
+});
 
 onBeforeUnmount(() => {
-    deck?.destroy()
-})
+    deck?.destroy();
+});
 
 watch(
     () => props.slide,
     () => {
-        deck?.sync()
+        deck?.sync();
     },
-)
+);
 </script>
 
-<style scoped lang="scss">
+<style
+    scoped
+    lang="scss"
+>
 .slide-preview {
     flex: 1;
     display: flex;

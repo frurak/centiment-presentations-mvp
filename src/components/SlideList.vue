@@ -16,24 +16,30 @@
     </aside>
 </template>
 
-<script setup lang="ts">
+<script
+    setup
+    lang="ts"
+>
 interface Slide {
-    id: number
-    title: string
-    subtext: string
+    id: number;
+    title: string;
+    subtext: string;
 }
 
 defineProps<{
     slides: Slide[]
     activeIndex: number
-}>()
+}>();
 
 defineEmits<{
     select: [index: number]
-}>()
+}>();
 </script>
 
-<style scoped lang="scss">
+<style
+    scoped
+    lang="scss"
+>
 .slide-list {
     width: 220px;
     min-width: 220px;
