@@ -8,7 +8,7 @@
                 <section>
                     <component
                         :is="slideComponent"
-                        :slide="slide"
+                        :slide="(slide as any)"
                     />
                 </section>
             </div>
@@ -49,7 +49,7 @@ const props = defineProps<{
 const slideComponent = computed(() => slideComponentMap[props.slide.type]);
 
 const deckEl = ref<HTMLElement | null>(null);
-let deck: Reveal.Api | null = null;
+let deck: InstanceType<typeof Reveal> | null = null;
 
 const revealReady = ref(false);
 provide("revealReady", revealReady);

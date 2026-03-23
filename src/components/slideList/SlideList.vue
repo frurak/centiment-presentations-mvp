@@ -10,7 +10,7 @@
             <span class="slide-list__number">{{ index + 1 }}</span>
             <div class="slide-list__thumbnail">
                 <p class="slide-list__thumbnail-title">{{ slide.title }}</p>
-                <p class="slide-list__thumbnail-sub">{{ slide.subtext }}</p>
+                <p class="slide-list__thumbnail-sub">{{ slide.subtitle ?? slide.insight }}</p>
             </div>
         </div>
     </aside>
@@ -20,14 +20,10 @@
     setup
     lang="ts"
 >
-interface Slide {
-    id: number;
-    title: string;
-    subtext: string;
-}
+import type { ISlide } from "@/definitions/slide/Slide";
 
 defineProps<{
-    slides: Slide[]
+    slides: ISlide[]
     activeIndex: number
 }>();
 
