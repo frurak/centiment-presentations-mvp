@@ -10,46 +10,19 @@
     </div>
 </template>
 
-<script
-    setup
-    lang="ts"
->
-import { ref } from "vue";
-import SlideList from "@/components/slideList/SlideList.vue";
-import SlidePreview from "@/components/slidePreview/SlidePreview.vue";
-import SlideConfig from "@/components/slideConfig/SlideConfig.vue";
+<script setup lang="ts">
+import { ref } from "vue"
+import type { ISlide } from "@/definitions/slide/Slide"
+import SlideList from "@/components/slideList/SlideList.vue"
+import SlidePreview from "@/components/slidePreview/SlidePreview.vue"
+import SlideConfig from "@/components/slideConfig/SlideConfig.vue"
+import aiOutput from "@/defaults/ai/ai-output.json"
 
-interface Slide {
-    id: number;
-    title: string;
-    subtext: string;
-}
-
-const activeIndex = ref<number>(0);
-
-const slides = ref<Slide[]>([
-    {
-        id: 1,
-        title: "Welcome to Centiment",
-        subtext: "The modern way to build and share presentations.",
-    },
-    {
-        id: 2,
-        title: "Data-Driven Insights",
-        subtext: "Visualize your metrics with beautiful, interactive charts.",
-    },
-    {
-        id: 3,
-        title: "Collaborate in Real Time",
-        subtext: "Work together with your team, anywhere in the world.",
-    },
-]);
+const activeIndex = ref<number>(0)
+const slides = ref<ISlide[]>(aiOutput.slides as ISlide[])
 </script>
 
-<style
-    scoped
-    lang="scss"
->
+<style scoped lang="scss">
 .slide-view {
     display: flex;
     height: 100vh;

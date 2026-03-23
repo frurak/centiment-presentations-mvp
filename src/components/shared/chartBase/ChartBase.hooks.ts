@@ -1,5 +1,10 @@
-import { ref, onMounted, onBeforeUnmount, watch } from "vue";
+import { ref, inject, onMounted, onBeforeUnmount, watch } from "vue";
+import type { Ref } from "vue";
 import Highcharts from "highcharts";
+
+Highcharts.setOptions({
+    lang: {locale: "en-US"},
+});
 import { ChartType } from "@/definitions/chart/Chart.enum";
 import type { IBarChartConfig, IPieChartConfig } from "@/definitions/chart/Chart";
 
@@ -46,8 +51,11 @@ export const useChartBase = (
     const containerEl = ref<HTMLElement | null>(null);
     let chart: Highcharts.Chart | null = null;
 
+    const revealReady = inject<Ref<boolean>>("revealReady", ref(true));
+
     const initChart = () => {
-        chart = Highcharts.chart(containerEl.value!, buildOptions(type(), config()));
+        if (!containerEl.value) return;
+        chart = Highcharts.chart(containerEl.value, buildOptions(type(), config()));
     };
 
     const destroyChart = () => {
@@ -61,7 +69,11 @@ export const useChartBase = (
     };
 
     onMounted(() => {
-        initChart();
+        if (revealReady.value) initChart();
+    });
+
+    watch(revealReady, (ready) => {
+        if (ready) initChart();
     });
 
     onBeforeUnmount(() => {

@@ -6,8 +6,10 @@
         >
             <div class="slides">
                 <section>
-                    <h1>{{ slide.title }}</h1>
-                    <p>{{ slide.subtext }}</p>
+                    <component
+                        :is="slideComponent"
+                        :slide="slide"
+                    />
                 </section>
             </div>
         </div>
@@ -18,35 +20,52 @@
     setup
     lang="ts"
 >
-import {ref, onMounted, onBeforeUnmount, watch} from "vue";
+import { computed, ref, provide, onMounted, onBeforeUnmount, watch } from "vue";
 import Reveal from "reveal.js";
 import "reveal.js/reveal.css";
-import "reveal.js/theme/black.css";
+import "reveal.js/theme/white.css";
+import type { ISlide } from "@/definitions/slide/Slide";
+import { SlideType } from "@/definitions/slide/Slide.enum";
+import TitleSlide from "@/components/slides/titleSlide/TitleSlide.vue";
+import KeyStatsSlide from "@/components/slides/keyStatsSlide/KeyStatsSlide.vue";
+import BarChartSlide from "@/components/slides/barChartSlide/BarChartSlide.vue";
+import PieChartSlide from "@/components/slides/pieChartSlide/PieChartSlide.vue";
+import TableSlide from "@/components/slides/tableSlide/TableSlide.vue";
+import ConclusionSlide from "@/components/slides/conclusionSlide/ConclusionSlide.vue";
 
-interface Slide {
-    id: number;
-    title: string;
-    subtext: string;
-}
+const slideComponentMap = {
+    [SlideType.Title]: TitleSlide,
+    [SlideType.KeyStats]: KeyStatsSlide,
+    [SlideType.BarChart]: BarChartSlide,
+    [SlideType.PieChart]: PieChartSlide,
+    [SlideType.Table]: TableSlide,
+    [SlideType.Conclusion]: ConclusionSlide,
+};
 
 const props = defineProps<{
-    slide: Slide
+    slide: ISlide
 }>();
+
+const slideComponent = computed(() => slideComponentMap[props.slide.type]);
 
 const deckEl = ref<HTMLElement | null>(null);
 let deck: Reveal.Api | null = null;
 
-onMounted(() => {
+const revealReady = ref(false);
+provide("revealReady", revealReady);
+
+onMounted(async () => {
     deck = new Reveal(deckEl.value!, {
         embedded: true,
         controls: false,
         progress: false,
         keyboard: false,
         touch: false,
-        center: true,
+        center: false,
         transition: "none",
     });
-    deck.initialize();
+    await deck.initialize();
+    revealReady.value = true;
 });
 
 onBeforeUnmount(() => {
@@ -82,6 +101,15 @@ watch(
 
         p, span, div, h1, h2, h3, h4, h5, h6 {
             color: #000000;
+        }
+
+        :deep(.slides) {
+            height: 100%;
+        }
+
+        :deep(section) {
+            height: 100% !important;
+            box-sizing: border-box;
         }
     }
 }
