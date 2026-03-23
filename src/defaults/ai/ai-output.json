@@ -1,0 +1,246 @@
+{
+  "title": "Product Experience Survey: Crosstab Insights",
+  "subtitle": "n = 30 respondents | Demographic & firmographic deep-dive",
+  "theme": {
+    "primary": "#1B4D5C",
+    "accent": "#E8603C",
+    "background": "#FFFFFF"
+  },
+  "slides": [
+    {
+      "id": 1,
+      "type": "title",
+      "title": "Product Experience Survey: Crosstab Insights",
+      "subtitle": "Key patterns across company size, region, and role level  •  n = 30"
+    },
+    {
+      "id": 2,
+      "type": "key_stats",
+      "title": "Headline Numbers",
+      "stats": [
+        {
+          "value": "100%",
+          "label": "Enterprise users rated satisfaction 4 or 5 — vs. 0% of SMBs"
+        },
+        {
+          "value": "75%",
+          "label": "North America 30-day purchase rate — 2× Europe's 40%"
+        },
+        {
+          "value": "90%",
+          "label": "Use the Website channel — but only 57% use the Mobile App"
+        },
+        {
+          "value": "87.5%",
+          "label": "Enterprise users gave 'Trust the results' a perfect 5"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "bar_chart",
+      "title": "Satisfaction Scores Diverge Sharply by Company Size",
+      "insight": "Enterprise customers are universally satisfied (100% rating 4–5), while SMBs cluster at neutral — signaling an unmet-needs gap that grows as company size shrinks.",
+      "chart": {
+        "xKey": "Rating",
+        "series": [
+          "SMB",
+          "Mid-market",
+          "Enterprise"
+        ],
+        "data": [
+          {
+            "Rating": "2",
+            "SMB": 2,
+            "Mid-market": 0,
+            "Enterprise": 0
+          },
+          {
+            "Rating": "3",
+            "SMB": 8,
+            "Mid-market": 9,
+            "Enterprise": 0
+          },
+          {
+            "Rating": "4",
+            "SMB": 0,
+            "Mid-market": 3,
+            "Enterprise": 3
+          },
+          {
+            "Rating": "5",
+            "SMB": 0,
+            "Mid-market": 0,
+            "Enterprise": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "type": "pie_chart",
+      "title": "Respondent Mix by Region",
+      "insight": "Over half the sample is North American, so regional sub-groups (especially Asia-Pacific at n = 4) should be interpreted directionally rather than definitively.",
+      "chart": {
+        "data": [
+          {
+            "name": "North America",
+            "value": 53
+          },
+          {
+            "name": "Europe",
+            "value": 33
+          },
+          {
+            "name": "Asia-Pacific",
+            "value": 13
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "type": "bar_chart",
+      "title": "Feature Adoption Varies Dramatically by Company Size",
+      "insight": "Enterprise customers are heavy users of Integrations (100%) and AI Insights (100%), while SMBs rely almost entirely on Alerts and Exports — suggesting smaller firms haven't discovered the platform's advanced capabilities.",
+      "chart": {
+        "xKey": "Feature",
+        "series": [
+          "SMB",
+          "Mid-market",
+          "Enterprise"
+        ],
+        "data": [
+          {
+            "Feature": "Analytics",
+            "SMB": 20,
+            "Mid-market": 92,
+            "Enterprise": 100
+          },
+          {
+            "Feature": "Alerts",
+            "SMB": 100,
+            "Mid-market": 17,
+            "Enterprise": 0
+          },
+          {
+            "Feature": "Exports",
+            "SMB": 90,
+            "Mid-market": 100,
+            "Enterprise": 38
+          },
+          {
+            "Feature": "Integrations",
+            "SMB": 0,
+            "Mid-market": 0,
+            "Enterprise": 100
+          },
+          {
+            "Feature": "AI Insights",
+            "SMB": 0,
+            "Mid-market": 25,
+            "Enterprise": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "type": "table",
+      "title": "30-Day Purchase Rate by Region & Gender",
+      "insight": "North America drives purchasing at 75%, while Europe's 60% non-purchase rate suggests a conversion bottleneck — possibly pricing or localization friction.",
+      "table": {
+        "headers": [
+          "Segment",
+          "Purchased (%)",
+          "Did Not Purchase (%)",
+          "n"
+        ],
+        "rows": [
+          [
+            "North America",
+            "75%",
+            "25%",
+            "16"
+          ],
+          [
+            "Europe",
+            "40%",
+            "60%",
+            "10"
+          ],
+          [
+            "Asia-Pacific",
+            "50%",
+            "50%",
+            "4"
+          ],
+          [
+            "Male",
+            "67%",
+            "33%",
+            "15"
+          ],
+          [
+            "Female",
+            "53%",
+            "47%",
+            "15"
+          ]
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "type": "bar_chart",
+      "title": "Rating Dimensions by Company Size: Enterprise Outperforms Across the Board",
+      "insight": "Enterprise users rate every dimension 4.5+ out of 5 while SMBs average below 3 — the experience gap is systemic, not limited to a single touchpoint.",
+      "chart": {
+        "xKey": "Dimension",
+        "series": [
+          "SMB",
+          "Mid-market",
+          "Enterprise"
+        ],
+        "data": [
+          {
+            "Dimension": "Value for Money",
+            "SMB": 2.8,
+            "Mid-market": 3.3,
+            "Enterprise": 4.5
+          },
+          {
+            "Dimension": "Easy to Use",
+            "SMB": 2.9,
+            "Mid-market": 3.3,
+            "Enterprise": 4.5
+          },
+          {
+            "Dimension": "Trust Results",
+            "SMB": 2.7,
+            "Mid-market": 3.5,
+            "Enterprise": 4.9
+          },
+          {
+            "Dimension": "AI Insights Helpful",
+            "SMB": 2.6,
+            "Mid-market": 3.3,
+            "Enterprise": 4.5
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "type": "conclusion",
+      "title": "Recommendations",
+      "bullets": [
+        "Prioritize the SMB onboarding experience: satisfaction and trust scores are critically low — consider guided setup flows or dedicated CSM touchpoints for smaller accounts.",
+        "Drive feature discovery for non-Enterprise tiers: Integrations and AI Insights have 0% adoption among SMBs despite being the features most correlated with high satisfaction.",
+        "Investigate the Europe conversion gap: a 60% non-purchase rate vs. 25% in North America points to possible pricing, localization, or go-to-market issues worth a dedicated follow-up study.",
+        "Expand the Mobile App experience: at 57% adoption vs. 90% for Website, there's significant room to shift engagement toward mobile — especially for the 35–54 cohort that already indexes high on app usage.",
+        "Caveat: all sub-groups carry low-base warnings (n < 30). Validate these directional findings with a larger-scale study before making major resource commitments."
+      ]
+    }
+  ]
+}
