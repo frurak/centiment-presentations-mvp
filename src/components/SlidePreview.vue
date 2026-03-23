@@ -70,14 +70,19 @@ watch(
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #2c2c2c;
+    background: #F6F6F6;
 
     .reveal {
         width: 900px;
         height: 506px;
-        border-radius: 8px;
+        border-radius: 4px;
         overflow: hidden;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 20px 0 rgba(32, 31, 36, 0.08);
+        background: #FFFFFF;
+
+        p, span, div, h1, h2, h3, h4, h5, h6 {
+            color: #000000;
+        }
     }
 }
 </style>

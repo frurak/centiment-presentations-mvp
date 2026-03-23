@@ -41,14 +41,14 @@ defineEmits<{
     lang="scss"
 >
 .slide-list {
-    width: 220px;
-    min-width: 220px;
-    background: #1e1e1e;
+    width: 200px;
+    background: #FFFFFF;
     overflow-y: auto;
     padding: 12px 8px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    border-right: 1px solid #EDEDED;
 
     &__item {
         display: flex;
@@ -57,7 +57,8 @@ defineEmits<{
         cursor: pointer;
         border-radius: 6px;
         padding: 6px;
-        border: 2px solid transparent;
+        border: 1px solid #C9C9CA;
+        background: #F7F7F7;
 
         &:hover {
             background: #2a2a2a;

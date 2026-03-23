@@ -17,7 +17,7 @@
 .slide-config {
     width: 260px;
     min-width: 260px;
-    background: #1e1e1e;
-    border-left: 1px solid #333;
+    background: #FFFFFF;
+    border-left: 1px solid #EDEDED;
 }
 </style>

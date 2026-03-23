@@ -55,6 +55,6 @@ const slides = ref<Slide[]>([
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background: #2c2c2c;
+    background: #F6F6F6;
 }
 </style >
